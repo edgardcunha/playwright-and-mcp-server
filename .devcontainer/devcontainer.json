@@ -1,21 +1,32 @@
 {
+    // A name for the dev container which can be displayed to the user.
     "name": "API Simples com .NET e Playwright",
+    // The docker image that will be used to create the container.
     "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
     // 'Features' adicionam ferramentas e runtimes ao seu ambiente.
     "features": {
         // Instala automaticamente os navegadores e dependências do Playwright.
-        "ghcr.io/microsoft/playwright:1": {}
     },
     // Encaminha as portas da nossa API para serem acessíveis no navegador.
-    "forwardPorts": [
-        5001,
-        5000
-    ],
+    //"forwardPorts": [
+        //5284,
+        //5000
+    //],
+    "portsAttributes": {
+		"5000": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		},
+		"5001": {
+			"protocol": "https"
+		}
+	},
     // Define configurações específicas do VSCode.
     "customizations": {
         "vscode": {
             // Instala as extensões essenciais automaticamente.
             "extensions": [
+                "GitHub.copilot",
                 "ms-dotnettools.csdevkit",
                 "ms-playwright.playwright",
                 "eamodio.gitlens"
