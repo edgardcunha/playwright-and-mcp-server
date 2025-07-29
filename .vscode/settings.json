@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "github.codespaces.defaultExtensions": [
+        "GitHub.codespaces",
+        "GitHub.vscode-pull-request-github",
+        "GitHub.copilot",
+    ]
+}

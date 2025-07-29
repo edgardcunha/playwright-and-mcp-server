@@ -1,0 +1,27 @@
+{
+    "name": "API Simples com .NET e Playwright",
+    "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+    // 'Features' adicionam ferramentas e runtimes ao seu ambiente.
+    "features": {
+        // Instala automaticamente os navegadores e dependências do Playwright.
+        "ghcr.io/microsoft/playwright:1": {}
+    },
+    // Encaminha as portas da nossa API para serem acessíveis no navegador.
+    "forwardPorts": [
+        5001,
+        5000
+    ],
+    // Define configurações específicas do VSCode.
+    "customizations": {
+        "vscode": {
+            // Instala as extensões essenciais automaticamente.
+            "extensions": [
+                "ms-dotnettools.csdevkit",
+                "ms-playwright.playwright",
+                "eamodio.gitlens"
+            ]
+        }
+    },
+    // Comando executado após a criação do contêiner.
+    "postCreateCommand": "dotnet restore"
+}
